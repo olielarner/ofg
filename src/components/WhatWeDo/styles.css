@@ -1,0 +1,10 @@
+.wwd-point::before {
+	content: ' ';
+	width: 22px;
+	height: 22px;
+	border-radius: 50%;
+	background-color: #17a386;
+	position: absolute;
+	right: -39px;
+	top: 31px;
+}
