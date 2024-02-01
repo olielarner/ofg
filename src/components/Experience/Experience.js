@@ -1,9 +1,118 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { ReactSVG } from 'react-svg';
+import gsap from 'gsap/all';
+import { ScrollTrigger } from 'gsap/all';
+import { useGSAP } from '@gsap/react';
 
 const Experience = () => {
+	const experience = useRef();
+	const largeTri = useRef();
+
+	useGSAP(() => {
+		gsap.registerPlugin(ScrollTrigger);
+
+		const triangle = experience.current.querySelector('.second-triangle');
+		const lineOne = experience.current.querySelector('.line-one');
+		const lineTwo = experience.current.querySelector('.line-two');
+		const tl = gsap.timeline();
+
+		tl.to(triangle, {
+			scrollTrigger: {
+				trigger: '.experience',
+				scrub: true,
+				start: 'top-=50% center',
+				end: 'bottom center',
+			},
+			rotation: 25,
+			ease: 'linear',
+		});
+
+		gsap.to(lineOne, {
+			scrollTrigger: {
+				trigger: lineOne,
+				start: 'top-=400 center',
+				end: 'bottom center',
+			},
+			top: 0,
+			duration: 1,
+			ease: 'power3.out',
+		});
+
+		gsap.fromTo(
+			lineTwo,
+			{
+				left: '-100%',
+				skewX: 90,
+			},
+			{
+				scrollTrigger: {
+					trigger: lineTwo,
+					start: 'top-=400 center',
+					end: 'bottom center',
+				},
+				left: '0%',
+				skewX: 0,
+				duration: 2.5,
+				ease: 'elastic.inOut(1,0.5)',
+			}
+		);
+
+		const octo = largeTri.current.querySelector('#logo-octo');
+		const tri = largeTri.current.querySelector('#logo-tri');
+		const fang = largeTri.current.querySelector('#logo-fang');
+
+		const otl = gsap.timeline();
+
+		otl.to(octo, {
+			scrollTrigger: {
+				trigger: '.experience',
+				scrub: true,
+				start: 'top-=50% center',
+				endTrigger: octo,
+				end: 'center center',
+			},
+			rotation: 180,
+			ease: 'linear',
+		});
+
+		const ttl = gsap.timeline();
+
+		ttl.from(tri, {
+			scrollTrigger: {
+				trigger: '.experience',
+				scrub: true,
+				start: 'top-=50% center',
+				endTrigger: octo,
+				end: 'center center',
+			},
+			x: 600,
+			y: 600,
+			rotation: 180,
+			ease: 'linear',
+		});
+
+		const ftl = gsap.timeline();
+
+		ftl.from(fang, {
+			scrollTrigger: {
+				trigger: '.experience',
+				scrub: true,
+				start: 'top-=50% center',
+				endTrigger: octo,
+				end: 'center center',
+			},
+			x: -600,
+			y: -600,
+			rotation: 380,
+			ease: 'linear',
+		});
+	});
+
 	return (
-		<div className="relative w-full min-h-screen pt-20 pb-16 overflow-hidden xl:pt-40 px-7 bg-ofg-dark-tan xl:pb-72 experience">
+		<div
+			className="relative w-full min-h-screen pt-20 pb-16 overflow-hidden xl:pt-40 px-7 bg-ofg-dark-tan xl:pb-72 experience"
+			ref={experience}
+		>
 			<ReactSVG
 				src="images/second-triangle.svg"
 				className="absolute -top-[20%] xl:-top-[30%] -left-[1000px] xl:-left-[30%] second-triangle"
@@ -53,7 +162,10 @@ const Experience = () => {
 						hosting package for your product and budget.
 					</p>
 				</div>
-				<div className="flex justify-end w-full xl:w-1/2 md:mt-20 xl:mt-0 large-logo">
+				<div
+					className="flex justify-end w-full xl:w-1/2 md:mt-20 xl:mt-0 large-logo"
+					ref={largeTri}
+				>
 					{/* <ReactSVG src="images/large-logo.svg" className="flex justify-end" /> */}
 					<svg
 						xmlns="http://www.w3.org/2000/svg"
