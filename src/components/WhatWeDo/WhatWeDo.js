@@ -1,8 +1,48 @@
-import React from 'react';
+import React, { useRef } from 'react';
+import gsap from 'gsap/all';
+import { ScrollTrigger } from 'gsap/all';
+import { useGSAP } from '@gsap/react';
 
 const WhatWeDo = () => {
+	const what = useRef();
+
+	useGSAP(() => {
+		gsap.registerPlugin(ScrollTrigger);
+
+		gsap.utils.toArray('.wwd-point').forEach((element) => {
+			gsap.from(element, {
+				scrollTrigger: {
+					trigger: element,
+					scrub: true,
+					start: 'top-=200 center',
+					end: '+=100',
+				},
+				opacity: 0,
+				bottom: -100,
+				ease: 'none',
+			});
+		});
+
+		const header = what.current.querySelector('.wwd-header');
+
+		gsap.to(header, {
+			scrollTrigger: {
+				trigger: header,
+				start: 'top-=400 center',
+				end: 'bottom center',
+			},
+			opacity: 1,
+			right: 0,
+			duration: 2.5,
+			ease: 'elastic.out(1,0.3)',
+		});
+	}, [what]);
+
 	return (
-		<div className="relative min-h-screen opacity-100 -bottom-0 what-we-do">
+		<div
+			className="relative min-h-screen opacity-100 -bottom-0 what-we-do"
+			ref={what}
+		>
 			<div className="container relative flex justify-start mx-auto px-7 xl:px-0">
 				<div className="w-auto text-right text-ofg-light-tan md:text-ofg-dark-green font-redhat ">
 					<h2 className="font-redhat italic font-bold text-5xl mb-8  xl:text-[68px] relative right-20 opacity-0 wwd-header">
