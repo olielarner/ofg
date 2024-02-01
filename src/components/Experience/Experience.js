@@ -9,7 +9,7 @@ const Experience = () => {
 	const largeTri = useRef();
 
 	useGSAP(() => {
-		window.onload = function () {
+		window.addEventListener('load', function () {
 			gsap.registerPlugin(ScrollTrigger);
 
 			const triangle = experience.current.querySelector('.second-triangle');
@@ -107,7 +107,7 @@ const Experience = () => {
 				rotation: 380,
 				ease: 'linear',
 			});
-		};
+		});
 	});
 
 	return (

@@ -7,7 +7,7 @@ const TanToGreen = () => {
 	const ttg = useRef();
 
 	useGSAP(() => {
-		window.onload = function () {
+		window.addEventListener('load', function () {
 			gsap.registerPlugin(ScrollTrigger);
 
 			const header = ttg.current.querySelector('.curves');
@@ -24,7 +24,7 @@ const TanToGreen = () => {
 				borderBottomRightRadius: '130px',
 				ease: 'none',
 			});
-		};
+		});
 	}, [ttg]);
 
 	return (

@@ -10,7 +10,7 @@ const HeaderCopy = (props) => {
 	const headerCopy = useRef();
 
 	useGSAP(() => {
-		window.onload = function () {
+		window.addEventListener('load', function () {
 			gsap.registerPlugin(ScrollTrigger);
 			gsap.utils.toArray('.header-copy').forEach((element) => {
 				gsap.to(element, {
@@ -24,7 +24,7 @@ const HeaderCopy = (props) => {
 					ease: 'none',
 				});
 			});
-		};
+		});
 	}, [headerCopy]);
 
 	return (

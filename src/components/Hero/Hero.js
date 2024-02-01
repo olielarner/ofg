@@ -11,7 +11,8 @@ const Hero = () => {
 	const hero = useRef();
 
 	useGSAP(() => {
-		window.onload = function () {
+		window.addEventListener('load', function () {
+			console.log('hero');
 			const triangle = hero.current.querySelector('.hero-triangle');
 			const circle = hero.current.querySelector('.hero-circle');
 			const circleTwo = hero.current.querySelector('.circle-two');
@@ -153,7 +154,7 @@ const Hero = () => {
 				},
 				'1'
 			);
-		};
+		});
 	}, [hero]);
 
 	return (

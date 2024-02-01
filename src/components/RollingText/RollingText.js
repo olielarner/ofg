@@ -6,7 +6,7 @@ const RollingText = () => {
 	const rolling = useRef();
 
 	useGSAP(() => {
-		window.onload = function () {
+		window.addEventListener('load', function () {
 			gsap
 				.to('.marquee__part', {
 					xPercent: -100,
@@ -31,7 +31,7 @@ const RollingText = () => {
 					ease: 'none',
 				})
 				.totalProgress(0.5);
-		};
+		});
 	});
 
 	return (

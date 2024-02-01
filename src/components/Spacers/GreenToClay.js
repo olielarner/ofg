@@ -7,7 +7,7 @@ const GreenToClay = () => {
 	const ttg = useRef();
 
 	useGSAP(() => {
-		window.onload = function () {
+		window.addEventListener('load', function () {
 			gsap.registerPlugin(ScrollTrigger);
 
 			const header = ttg.current.querySelector('.curves');
@@ -24,7 +24,7 @@ const GreenToClay = () => {
 				borderBottomRightRadius: '130px',
 				ease: 'none',
 			});
-		};
+		});
 	}, [ttg]);
 
 	return (

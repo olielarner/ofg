@@ -10,7 +10,6 @@ const Contact = () => {
 	const handler = async (event, context) => {};
 
 	const submitForm = async (values) => {
-		console.log(values);
 		const { name, email } = values;
 		const listId = '971b86e2e4';
 		const apiKey = '87a2bd06d8b61faf97923b186ed99b80-us21';
