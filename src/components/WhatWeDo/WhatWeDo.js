@@ -8,35 +8,37 @@ const WhatWeDo = () => {
 	const what = useRef();
 
 	useGSAP(() => {
-		gsap.registerPlugin(ScrollTrigger);
+		window.onload = function () {
+			gsap.registerPlugin(ScrollTrigger);
 
-		gsap.utils.toArray('.wwd-point').forEach((element) => {
-			gsap.from(element, {
-				scrollTrigger: {
-					trigger: element,
-					scrub: true,
-					start: 'top-=200 center',
-					end: '+=100',
-				},
-				opacity: 0,
-				bottom: -100,
-				ease: 'none',
+			gsap.utils.toArray('.wwd-point').forEach((element) => {
+				gsap.from(element, {
+					scrollTrigger: {
+						trigger: element,
+						scrub: true,
+						start: 'top-=200 center',
+						end: '+=100',
+					},
+					opacity: 0,
+					bottom: -100,
+					ease: 'none',
+				});
 			});
-		});
 
-		const header = what.current.querySelector('.wwd-header');
+			const header = what.current.querySelector('.wwd-header');
 
-		gsap.to(header, {
-			scrollTrigger: {
-				trigger: header,
-				start: 'top-=400 center',
-				end: 'bottom center',
-			},
-			opacity: 1,
-			right: 0,
-			duration: 2.5,
-			ease: 'elastic.out(1,0.3)',
-		});
+			gsap.to(header, {
+				scrollTrigger: {
+					trigger: header,
+					start: 'top-=400 center',
+					end: 'bottom center',
+				},
+				opacity: 1,
+				right: 0,
+				duration: 2.5,
+				ease: 'elastic.out(1,0.3)',
+			});
+		};
 	}, [what]);
 
 	return (

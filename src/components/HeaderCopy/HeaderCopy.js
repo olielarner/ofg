@@ -10,19 +10,21 @@ const HeaderCopy = (props) => {
 	const headerCopy = useRef();
 
 	useGSAP(() => {
-		gsap.registerPlugin(ScrollTrigger);
-		gsap.utils.toArray('.header-copy').forEach((element) => {
-			gsap.to(element, {
-				scrollTrigger: {
-					trigger: element,
-					scrub: true,
-					start: 'top bottom',
-					end: 'top top',
-				},
-				bottom: '200px',
-				ease: 'none',
+		window.onload = function () {
+			gsap.registerPlugin(ScrollTrigger);
+			gsap.utils.toArray('.header-copy').forEach((element) => {
+				gsap.to(element, {
+					scrollTrigger: {
+						trigger: element,
+						scrub: true,
+						start: 'top bottom',
+						end: 'top top',
+					},
+					bottom: '200px',
+					ease: 'none',
+				});
 			});
-		});
+		};
 	}, [headerCopy]);
 
 	return (
