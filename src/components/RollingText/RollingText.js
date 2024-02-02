@@ -6,32 +6,30 @@ const RollingText = () => {
 	const rolling = useRef();
 
 	useGSAP(() => {
-		window.addEventListener('load', function () {
-			gsap
-				.to('.marquee__part', {
-					xPercent: -100,
-					repeat: -1,
-					duration: 30,
-					ease: 'none',
-				})
-				.totalProgress(0.5);
-			gsap
-				.to('.marquee__part_two', {
-					xPercent: -100,
-					repeat: -1,
-					duration: 45,
-					ease: 'none',
-				})
-				.totalProgress(0.5);
-			gsap
-				.to('.marquee__part_three', {
-					xPercent: -100,
-					repeat: -1,
-					duration: 70,
-					ease: 'none',
-				})
-				.totalProgress(0.5);
-		});
+		gsap
+			.to('.marquee__part', {
+				xPercent: -100,
+				repeat: -1,
+				duration: 30,
+				ease: 'none',
+			})
+			.totalProgress(0.5);
+		gsap
+			.to('.marquee__part_two', {
+				xPercent: -100,
+				repeat: -1,
+				duration: 45,
+				ease: 'none',
+			})
+			.totalProgress(0.5);
+		gsap
+			.to('.marquee__part_three', {
+				xPercent: -100,
+				repeat: -1,
+				duration: 70,
+				ease: 'none',
+			})
+			.totalProgress(0.5);
 	});
 
 	return (

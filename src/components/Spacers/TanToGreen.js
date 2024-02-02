@@ -7,23 +7,21 @@ const TanToGreen = () => {
 	const ttg = useRef();
 
 	useGSAP(() => {
-		window.addEventListener('load', function () {
-			gsap.registerPlugin(ScrollTrigger);
+		gsap.registerPlugin(ScrollTrigger);
 
-			const header = ttg.current.querySelector('.curves');
+		const header = ttg.current.querySelector('.curves');
 
-			gsap.to(header, {
-				scrollTrigger: {
-					trigger: header,
-					scrub: true,
-					start: 'top+=200 bottom',
-					end: 'top top',
-				},
+		gsap.to(header, {
+			scrollTrigger: {
+				trigger: header,
+				scrub: true,
+				start: 'top+=200 bottom',
+				end: 'top top',
+			},
 
-				borderBottomLeftRadius: '130px',
-				borderBottomRightRadius: '130px',
-				ease: 'none',
-			});
+			borderBottomLeftRadius: '130px',
+			borderBottomRightRadius: '130px',
+			ease: 'none',
 		});
 	}, [ttg]);
 
