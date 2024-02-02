@@ -7,6 +7,7 @@ import TanToGreen from '../../components/Spacers/TanToGreen';
 import Footer from '../../components/Footer/Footer';
 import GreenToClay from '../../components/Spacers/GreenToClay';
 import Header from '../../components/Header/Header';
+import Form from '../../components/Contact/Form';
 
 function Home() {
 	return (
@@ -16,7 +17,8 @@ function Home() {
 			<GreenToTan />
 			<Experience />
 			<TanToGreen />
-			<Contact />
+			{/* <Contact /> */}
+			<Form />
 			<GreenToClay />
 			<Footer />
 		</div>
