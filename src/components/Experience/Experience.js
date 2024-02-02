@@ -72,6 +72,7 @@ const Experience = () => {
 				end: 'center center',
 			},
 			rotation: 180,
+			transformOrigin: 'center center',
 			ease: 'linear',
 		});
 
