@@ -8,37 +8,36 @@ const WhatWeDo = () => {
 	const what = useRef();
 
 	useGSAP(() => {
-		window.onload = function () {
-			gsap.registerPlugin(ScrollTrigger);
+		gsap.registerPlugin(ScrollTrigger);
 
-			gsap.utils.toArray('.wwd-point').forEach((element) => {
-				gsap.from(element, {
-					scrollTrigger: {
-						trigger: element,
-						scrub: true,
-						start: 'top-=200 center',
-						end: '+=100',
-					},
-					opacity: 0,
-					bottom: -100,
-					ease: 'none',
-				});
-			});
-
-			const header = what.current.querySelector('.wwd-header');
-
-			gsap.to(header, {
+		gsap.utils.toArray('.wwd-point').forEach((element) => {
+			gsap.from(element, {
 				scrollTrigger: {
-					trigger: header,
-					start: 'top-=400 center',
-					end: 'bottom center',
+					trigger: element,
+					scrub: true,
+					start: 'top-=200 center',
+					end: '+=100',
 				},
-				opacity: 1,
-				right: 0,
-				duration: 2.5,
-				ease: 'elastic.out(1,0.3)',
+				opacity: 0,
+				bottom: -100,
+				ease: 'none',
 			});
-		};
+		});
+
+		const header = what.current.querySelector('.wwd-header');
+
+		gsap.to(header, {
+			scrollTrigger: {
+				trigger: header,
+				start: 'top-=400 center',
+				end: 'bottom center',
+			},
+			opacity: 1,
+			right: 0,
+			duration: 2.5,
+			ease: 'elastic.out(1,0.3)',
+		});
+		ScrollTrigger.refresh();
 	}, [what]);
 
 	return (
