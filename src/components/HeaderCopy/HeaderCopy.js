@@ -13,11 +13,12 @@ const HeaderCopy = (props) => {
 		gsap.registerPlugin(ScrollTrigger);
 		gsap.utils.toArray('.header-copy').forEach((element) => {
 			gsap.to(element, {
-				bottom: '200px',
-				immediateRender: false,
+				bottom: 200,
+				ease: 'none',
 				scrollTrigger: {
 					trigger: element,
 					scrub: true,
+					markers: true,
 				},
 			});
 		});
