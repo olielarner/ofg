@@ -11,7 +11,6 @@ const Hero = () => {
 	const hero = useRef();
 
 	useGSAP(() => {
-		console.log(hero.current.clientHeight);
 		const triangle = hero.current.querySelector('.hero-triangle');
 		const circle = hero.current.querySelector('.hero-circle');
 		const circleTwo = hero.current.querySelector('.circle-two');
@@ -153,6 +152,7 @@ const Hero = () => {
 			},
 			'1'
 		);
+		ScrollTrigger.refresh();
 	}, [hero]);
 
 	return (

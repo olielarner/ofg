@@ -18,10 +18,11 @@ const HeaderCopy = (props) => {
 				scrollTrigger: {
 					trigger: element,
 					scrub: true,
-					markers: true,
 				},
 			});
 		});
+
+		ScrollTrigger.refresh();
 	}, [headerCopy]);
 
 	return (

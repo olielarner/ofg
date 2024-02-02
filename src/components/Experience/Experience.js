@@ -107,6 +107,7 @@ const Experience = () => {
 			rotation: 380,
 			ease: 'linear',
 		});
+		ScrollTrigger.refresh();
 	});
 
 	return (
