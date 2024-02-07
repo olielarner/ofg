@@ -45,7 +45,7 @@ const WhatWeDo = () => {
 			className="relative min-h-screen opacity-100 -bottom-0 what-we-do"
 			ref={what}
 		>
-			<div className="container relative flex justify-start mx-auto px-7 xl:px-0">
+			<div className="container relative flex justify-start mx-auto px-7">
 				<div className="w-auto text-right text-ofg-light-tan md:text-ofg-dark-green font-redhat ">
 					<h2 className="font-redhat italic font-bold text-5xl mb-8  xl:text-[68px] relative right-20 opacity-0 wwd-header">
 						What we do

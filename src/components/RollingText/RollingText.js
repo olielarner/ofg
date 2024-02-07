@@ -34,7 +34,10 @@ const RollingText = () => {
 
 	return (
 		<>
-			<div className="relative overflow-hidden rolling-text" ref={rolling}>
+			<div
+				className="relative overflow-hidden opacity-50 rolling-text"
+				ref={rolling}
+			>
 				<div className="flex flex-row flex-auto marquee__inner w-fit">
 					<div className="flex-shrink-0 italic font-bold marquee__part font-playFair text-ofg-light-tan text-9xl">
 						HTML,Wordpress, CSS, SCSS, Tailwind, Javascript, Jquery, React, Vue,
@@ -46,7 +49,7 @@ const RollingText = () => {
 					</div>
 				</div>
 			</div>
-			<div className="relative overflow-hidden rolling-text">
+			<div className="relative overflow-hidden opacity-50 rolling-text">
 				<div className="flex flex-row flex-auto marquee__inner w-fit">
 					<div className="flex-shrink-0 italic font-bold marquee__part_two font-playFair text-ofg-light-tan text-9xl">
 						HTML,Wordpress, CSS, SCSS, Tailwind, Javascript, Jquery, React, Vue,
@@ -58,7 +61,7 @@ const RollingText = () => {
 					</div>
 				</div>
 			</div>
-			<div className="relative overflow-hidden rolling-text">
+			<div className="relative overflow-hidden opacity-50 rolling-text">
 				<div className="flex flex-row flex-auto marquee__inner w-fit">
 					<div className="flex-shrink-0 italic font-bold marquee__part_three font-playFair text-ofg-light-tan text-9xl">
 						HTML,Wordpress, CSS, SCSS, Tailwind, Javascript, Jquery, React, Vue,

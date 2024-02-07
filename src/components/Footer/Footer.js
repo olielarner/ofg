@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
 	function getYear() {
@@ -31,24 +32,24 @@ const Footer = () => {
 				</div>
 				<div className="xl:text-right">
 					<div className="flex flex-col mt-9">
-						<a
-							href="/"
+						<Link
+							to="/cookies-policy"
 							className="mb-3 font-light no-underline mb- text-ofg-dark-tan font-redhat"
 						>
 							Cookie Policy
-						</a>
-						<a
-							href="/"
+						</Link>
+						<Link
+							to="/terms-and-conditions"
 							className="mb-3 font-light no-underline mb- text-ofg-dark-tan font-redhat"
 						>
 							Term and Conditions
-						</a>
-						<a
-							href="/"
+						</Link>
+						<Link
+							to="/privacy-policy"
 							className="mb-3 font-light no-underline mb- text-ofg-dark-tan font-redhat"
 						>
 							Privacy Policy
-						</a>
+						</Link>
 					</div>
 
 					<div className="flex items-end mt-4 xl:justify-end">
